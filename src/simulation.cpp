@@ -140,7 +140,7 @@ const StageTimer& Simulation::run() {
         }
 
         // ── Snapshot ──────────────────────────────────────────────────
-        if (s % SNAP_INTERVAL == 0)
+        if (s % SNAP_INTERVAL == 0 || s > 300)
             write_snapshot(s);
 
         // ── Barra de progreso simple ───────────────────────────────────

@@ -40,8 +40,7 @@ constexpr std::size_t N_CELLS     = Ng*Ng*Ng; // total de celdas en la malla
 
 // ─────────────────────────────────────────────────────────────
 // Geometría de la caja de simulación
-// L_box: tamaño en Mpc/h (solo relevante para unidades físicas;
-//        internamente todo trabaja en [0, 1))
+// L_box: tamaño en Mpc/h
 // ─────────────────────────────────────────────────────────────
 constexpr double L_BOX   = 100.0;             // Mpc/h
 constexpr double CELL_SIZE = L_BOX / Ng;      // tamaño de celda en Mpc/h
@@ -65,7 +64,7 @@ constexpr double G_GRAV  = 1.0;
 // Salida de datos
 // SNAP_INTERVAL: cada cuántos pasos se escribe un snapshot
 // ─────────────────────────────────────────────────────────────
-constexpr int SNAP_INTERVAL = 10;
+constexpr int SNAP_INTERVAL = 15;
 
 // ─────────────────────────────────────────────────────────────
 // Softening gravitacional

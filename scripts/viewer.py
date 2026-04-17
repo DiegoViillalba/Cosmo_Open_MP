@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+from matplotlib.colors import LogNorm
 # FILENAME = "build/data/snap_0000.bin"   
-FILENAME = "data/snap_0050.bin"
+FILENAME = "data/snap_0345.bin"
 
 # 1. Leer el archivo ignorando el primer valor problemático por ahora
 # Sabemos que el total de datos es 14,680,064
@@ -23,11 +24,19 @@ pos = particles_data[:, 0:3]
 
 print(f"Total de partículas procesadas: {len(particles_data)}")
 
-# 4. Histograma de Densidad 2D
+# 4. Histograma de Densidad 2D con escala logarítmica
 plt.figure(figsize=(10, 10), facecolor='black')
-# Ajustamos bins a 256 para ver la estructura clara
+
+# Usamos LogNorm para que el colormap 'magma' represente el log de la densidad.
+# El parámetro 'bins=256' es ideal si Ng=256 o Ng=128.
 h = plt.hist2d(pos[:, 0], pos[:, 1], bins=256, cmap='magma')
-plt.title("Distribución de Materia - pm_cosmo", color='white')
+
+plt.title("Distribución de Materia (Log-Density) - pm_cosmo", color='white', pad=20)
 plt.axis('off')
-plt.savefig('resultado.png', dpi=300)
+
+# Añadir una barra de color suele ayudar a interpretar la densidad logarítmica
+cbar = plt.colorbar(h[3], ax=plt.gca(), fraction=0.046, pad=0.04)
+cbar.ax.tick_params(colors='white')
+
+plt.savefig('resultado_log.png', dpi=300, bbox_inches='tight', facecolor='black')
 plt.show()

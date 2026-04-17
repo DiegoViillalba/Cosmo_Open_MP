@@ -75,6 +75,12 @@ void generate_uniform_ic(SimState& state,
     const double mass_per_part = 1.0 / static_cast<double>(N_PARTICLES);
     const double spacing = static_cast<double>(Ng) / static_cast<double>(Np);
 
+    // Implementación de ICs a partir de desplazamiento
+    // double redshift_initial = 50.0;
+    // double H0 = 67.4; // Planck collaboration 2018
+    
+    // double a_initial = 1.0 / (1.0 + redshift_initial);
+
     // Generador de números aleatorios con distribución normal
     std::mt19937_64 rng(seed);
     std::normal_distribution<double> dist_pos(0.0, sigma_pos);
@@ -87,8 +93,7 @@ void generate_uniform_ic(SimState& state,
 
                 auto& p = state.particles[idx++];
 
-                // Posición en la grilla regular más perturbación gaussiana
-                // El módulo garantiza que las posiciones queden en [0, Ng)
+                // Posición inicial en la grilla
                 double x = (ix + 0.5) * spacing + dist_pos(rng);
                 double y = (iy + 0.5) * spacing + dist_pos(rng);
                 double z = (iz + 0.5) * spacing + dist_pos(rng);
