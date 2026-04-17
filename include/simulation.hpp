@@ -10,7 +10,7 @@
 //   │  Step n                                         │
 //   │                                                 │
 //   │  1. cic_deposit()      partículas → ρ(x)        │
-//   │  2. solve_poisson()    ρ(x) → φ(k) → φ(x)      │
+//   │  2. solve_poisson()    ρ(x) → φ(k) → φ(x)       │
 //   │  3. compute_gradient() φ(x) → g(x)              │
 //   │  4. interpolate_force() g(x) → a_i por partícula│
 //   │  5. leapfrog_step()    (x,v) → (x',v')          │
@@ -36,6 +36,7 @@ struct RunConfig {
     std::string output_dir;    // carpeta de salida para snapshots
     bool use_ascii;            // true = ASCII, false = binario
     bool verbose;              // imprime diagnósticos en cada paso
+                               // TODO: Implement a frequancy of saving
 
     RunConfig()
         : ic_file(""), n_threads(0), n_steps(0),
