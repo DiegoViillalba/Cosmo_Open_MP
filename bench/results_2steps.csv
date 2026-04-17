@@ -1,0 +1,6 @@
+mode,threads,total_s,cic_s,fft_s,grad_s,interp_s,integr_s
+serial,1,49.204,0,0,0,0,0
+parallel,1,53.335,0,0,0,0,0
+parallel,2,49.926,0,0,0,0,0
+parallel,4,49.614,0,0,0,0,0
+parallel,8,48.405,0,0,0,0,0

@@ -22,6 +22,7 @@
 #include "config.hpp"
 
 #include <fftw3.h>
+#include <algorithm>
 #include <cmath>
 #include <complex>
 #include <stdexcept>
@@ -32,45 +33,112 @@
 
 namespace pm {
 
+namespace {
+
+class FFTWPlanCache {
+public:
+    FFTWPlanCache()
+        : n_(static_cast<int>(Ng)),
+          real_size_(static_cast<std::size_t>(n_) * n_ * n_),
+          cplx_size_(static_cast<std::size_t>(n_) * n_ * (n_ / 2 + 1)),
+          in_(nullptr),
+          out_(nullptr),
+          plan_fwd_(nullptr),
+          plan_inv_(nullptr),
+          planned_threads_(0),
+          threads_initialized_(false) {
+        in_ = fftw_alloc_real(real_size_);
+        out_ = fftw_alloc_complex(cplx_size_);
+        if (!in_ || !out_)
+            throw std::runtime_error("poisson_fft: fallo en fftw_alloc");
+    }
+
+    ~FFTWPlanCache() {
+        destroy_plans();
+        if (in_) fftw_free(in_);
+        if (out_) fftw_free(out_);
+        if (threads_initialized_)
+            fftw_cleanup_threads();
+    }
+
+    void ensure_plans_for_threads(int nthreads) {
+        const int safe_threads = std::max(1, nthreads);
+
+        if (!threads_initialized_) {
+            if (fftw_init_threads() == 0)
+                throw std::runtime_error("poisson_fft: fftw_init_threads fallo");
+            threads_initialized_ = true;
+        }
+
+        if (plan_fwd_ && plan_inv_ && planned_threads_ == safe_threads)
+            return;
+
+        destroy_plans();
+        fftw_plan_with_nthreads(safe_threads);
+
+        // Reusar planes amortiza el costo de planning en todos los pasos.
+        plan_fwd_ = fftw_plan_dft_r2c_3d(n_, n_, n_, in_, out_, FFTW_MEASURE);
+        plan_inv_ = fftw_plan_dft_c2r_3d(n_, n_, n_, out_, in_, FFTW_MEASURE);
+        if (!plan_fwd_ || !plan_inv_)
+            throw std::runtime_error("poisson_fft: fallo al crear planes FFTW");
+
+        planned_threads_ = safe_threads;
+    }
+
+    double* in() { return in_; }
+    fftw_complex* out() { return out_; }
+    fftw_plan forward_plan() const { return plan_fwd_; }
+    fftw_plan inverse_plan() const { return plan_inv_; }
+    std::size_t real_size() const { return real_size_; }
+
+private:
+    void destroy_plans() {
+        if (plan_fwd_) {
+            fftw_destroy_plan(plan_fwd_);
+            plan_fwd_ = nullptr;
+        }
+        if (plan_inv_) {
+            fftw_destroy_plan(plan_inv_);
+            plan_inv_ = nullptr;
+        }
+    }
+
+    int n_;
+    std::size_t real_size_;
+    std::size_t cplx_size_;
+    double* in_;
+    fftw_complex* out_;
+    fftw_plan plan_fwd_;
+    fftw_plan plan_inv_;
+    int planned_threads_;
+    bool threads_initialized_;
+};
+
+FFTWPlanCache& fftw_cache() {
+    static FFTWPlanCache cache;
+    return cache;
+}
+
+int fftw_thread_count() {
+#if defined(PM_SERIAL)
+    return 1;
+#elif defined(_OPENMP)
+    return omp_get_max_threads();
+#else
+    return 1;
+#endif
+}
+
+} // namespace
+
 void solve_poisson(SimState& state) {
 
     const int N = static_cast<int>(Ng);
-    const std::size_t real_size   = N * N * N;
-    const std::size_t cplx_size   = N * N * (N/2 + 1);
-
-    // ──────────────────────────────────────────────────────────────────
-    // Asignar buffers alineados con fftw_malloc.
-    // fftw_malloc garantiza alineación de 16 bytes para SIMD (SSE/AVX).
-    // ──────────────────────────────────────────────────────────────────
-    double*          in  = fftw_alloc_real(real_size);
-    fftw_complex*    out = fftw_alloc_complex(cplx_size);
-
-    if (!in || !out)
-        throw std::runtime_error("poisson_fft: fallo en fftw_alloc");
-
-    // ──────────────────────────────────────────────────────────────────
-    // Nota sobre FFTW y OpenMP:
-    // fftw3_omp (fftw_init_threads / fftw_plan_with_nthreads) requiere
-    // el paquete libfftw3-bin compilado con soporte OMP, que no siempre
-    // está disponible. En su lugar paralelizamos el loop de multiplicación
-    // por el kernel con #pragma omp, que es donde está el trabajo real
-    // para mallas grandes. Las propias llamadas fftw_execute son secuenciales
-    // pero el bottleneck cosmológico está en el kernel, no en la FFT.
-    // Para producción con Ng=512+ se puede linkar -lfftw3_omp y descomentar:
-    //   fftw_init_threads(); fftw_plan_with_nthreads(omp_get_max_threads());
-    // ──────────────────────────────────────────────────────────────────
-
-    // ──────────────────────────────────────────────────────────────────
-    // Crear planes de FFT.
-    // FFTW_ESTIMATE: no mide, usa heurística. Más lento en ejecución
-    // pero evita el overhead de planificación (importante en demos).
-    // Para producción real se usaría FFTW_MEASURE con plan guardado.
-    // ──────────────────────────────────────────────────────────────────
-    fftw_plan plan_fwd = fftw_plan_dft_r2c_3d(N, N, N, in, out, FFTW_ESTIMATE);
-    fftw_plan plan_inv = fftw_plan_dft_c2r_3d(N, N, N, out, in, FFTW_ESTIMATE);
-
-    if (!plan_fwd || !plan_inv)
-        throw std::runtime_error("poisson_fft: fallo al crear planes FFTW");
+    auto& cache = fftw_cache();
+    cache.ensure_plans_for_threads(fftw_thread_count());
+    double* in = cache.in();
+    fftw_complex* out = cache.out();
+    const std::size_t real_size = cache.real_size();
 
     // ──────────────────────────────────────────────────────────────────
     // Copiar densidad al buffer de entrada
@@ -82,7 +150,7 @@ void solve_poisson(SimState& state) {
         in[i] = state.density[i];
 
     // ── FFT directa: ρ(x) → ρ̂(k) ──────────────────────────────────
-    fftw_execute(plan_fwd);
+    fftw_execute(cache.forward_plan());
 
     // ──────────────────────────────────────────────────────────────────
     // Multiplicar por el kernel de Green en espacio de Fourier:
@@ -133,7 +201,7 @@ void solve_poisson(SimState& state) {
     }
 
     // ── FFT inversa: φ̂(k) → φ(x) ──────────────────────────────────
-    fftw_execute(plan_inv);
+    fftw_execute(cache.inverse_plan());
 
     // ──────────────────────────────────────────────────────────────────
     // Normalizar: FFTW no normaliza la FFT inversa.
@@ -146,12 +214,6 @@ void solve_poisson(SimState& state) {
     #endif
     for (std::size_t i = 0; i < real_size; ++i)
         state.potential[i] = in[i] * norm;
-
-    // Liberar recursos FFTW
-    fftw_destroy_plan(plan_fwd);
-    fftw_destroy_plan(plan_inv);
-    fftw_free(in);
-    fftw_free(out);
 }
 
 } // namespace pm

@@ -16,9 +16,20 @@ find_package(OpenMP REQUIRED)
 # ─────────────────────────────────────────────
 # Localizar FFTW3 (transformada de Fourier)
 # En Ubuntu/Debian: sudo apt install libfftw3-dev
+
 # ─────────────────────────────────────────────
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFTW3 REQUIRED fftw3)
+pkg_check_modules(FFTW3_OMP QUIET fftw3_omp)
+
+if(FFTW3_OMP_FOUND)
+    set(FFTW3_OMP_INCLUDE_PATHS ${FFTW3_OMP_INCLUDE_DIRS})
+    set(FFTW3_OMP_LINK_LIBS ${FFTW3_OMP_LIBRARIES})
+else()
+    find_library(FFTW3_OMP_LIBRARY NAMES fftw3_omp REQUIRED)
+    set(FFTW3_OMP_INCLUDE_PATHS "")
+    set(FFTW3_OMP_LINK_LIBS ${FFTW3_OMP_LIBRARY})
+endif()
 
 # ─────────────────────────────────────────────
 # Flags de compilación comunes
@@ -63,8 +74,8 @@ set(SHARED_SOURCES
 #   de comparación de desempeño.
 # ══════════════════════════════════════════════
 add_executable(pm_serial src/main.cpp ${SHARED_SOURCES})
-target_include_directories(pm_serial PRIVATE ${INCLUDE_DIR} ${FFTW3_INCLUDE_DIRS})
-target_link_libraries(pm_serial PRIVATE ${FFTW3_LIBRARIES})
+target_include_directories(pm_serial PRIVATE ${INCLUDE_DIR} ${FFTW3_INCLUDE_DIRS} ${FFTW3_OMP_INCLUDE_PATHS})
+target_link_libraries(pm_serial PRIVATE ${FFTW3_LIBRARIES} ${FFTW3_OMP_LINK_LIBS})
 target_compile_definitions(pm_serial PRIVATE PM_SERIAL)
 # Sin OpenMP: no se pasa OpenMP::OpenMP_CXX
 
@@ -75,8 +86,8 @@ target_compile_definitions(pm_serial PRIVATE PM_SERIAL)
 #   NO está definido.
 # ══════════════════════════════════════════════
 add_executable(pm_parallel src/main.cpp ${SHARED_SOURCES})
-target_include_directories(pm_parallel PRIVATE ${INCLUDE_DIR} ${FFTW3_INCLUDE_DIRS})
-target_link_libraries(pm_parallel PRIVATE OpenMP::OpenMP_CXX ${FFTW3_LIBRARIES})
+target_include_directories(pm_parallel PRIVATE ${INCLUDE_DIR} ${FFTW3_INCLUDE_DIRS} ${FFTW3_OMP_INCLUDE_PATHS})
+target_link_libraries(pm_parallel PRIVATE OpenMP::OpenMP_CXX ${FFTW3_LIBRARIES} ${FFTW3_OMP_LINK_LIBS})
 # OpenMP::OpenMP_CXX ya agrega -fopenmp al compilador y al linker
 
 # ══════════════════════════════════════════════
@@ -92,8 +103,8 @@ add_executable(run_tests
     tests/test_diagnostics.cpp
     ${SHARED_SOURCES}
 )
-target_include_directories(run_tests PRIVATE ${INCLUDE_DIR} ${FFTW3_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/tests)
-target_link_libraries(run_tests PRIVATE OpenMP::OpenMP_CXX ${FFTW3_LIBRARIES})
+target_include_directories(run_tests PRIVATE ${INCLUDE_DIR} ${FFTW3_INCLUDE_DIRS} ${FFTW3_OMP_INCLUDE_PATHS} ${CMAKE_SOURCE_DIR}/tests)
+target_link_libraries(run_tests PRIVATE OpenMP::OpenMP_CXX ${FFTW3_LIBRARIES} ${FFTW3_OMP_LINK_LIBS})
 
 # ─────────────────────────────────────────────
 # Mensaje informativo al configurar con cmake
@@ -104,6 +115,11 @@ message(STATUS "  C++ standard  : ${CMAKE_CXX_STANDARD}")
 message(STATUS "  Build type    : ${CMAKE_BUILD_TYPE}")
 message(STATUS "  OpenMP found  : ${OpenMP_CXX_FOUND}")
 message(STATUS "  FFTW3 found   : ${FFTW3_FOUND}")
+if(FFTW3_OMP_FOUND)
+    message(STATUS "  FFTW3_OMP found: YES (pkg-config)")
+else()
+    message(STATUS "  FFTW3_OMP found: YES (find_library)")
+endif()
 message(STATUS "  Flags         : ${CMAKE_CXX_FLAGS}")
 message(STATUS "")
 message(STATUS "  Targets disponibles:")

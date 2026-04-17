@@ -1,6 +1,7 @@
 CMakeFiles/run_tests.dir/tests/test_cic.cpp.o: \
- /home/claude/pm_cosmo/tests/test_cic.cpp /usr/include/stdc-predef.h \
- /home/claude/pm_cosmo/tests/test_framework.hpp \
+ /home/diego-villalba/code/Cosmo_Open_MP/tests/test_cic.cpp \
+ /usr/include/stdc-predef.h \
+ /home/diego-villalba/code/Cosmo_Open_MP/tests/test_framework.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -199,8 +200,10 @@ CMakeFiles/run_tests.dir/tests/test_cic.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/claude/pm_cosmo/include/types.hpp /usr/include/c++/13/cassert \
- /usr/include/assert.h /home/claude/pm_cosmo/include/config.hpp \
- /home/claude/pm_cosmo/include/cic.hpp /usr/include/c++/13/algorithm \
+ /home/diego-villalba/code/Cosmo_Open_MP/include/types.hpp \
+ /usr/include/c++/13/cassert /usr/include/assert.h \
+ /home/diego-villalba/code/Cosmo_Open_MP/include/config.hpp \
+ /home/diego-villalba/code/Cosmo_Open_MP/include/cic.hpp \
+ /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h

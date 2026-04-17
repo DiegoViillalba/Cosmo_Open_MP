@@ -1,6 +1,7 @@
 CMakeFiles/run_tests.dir/tests/test_main.cpp.o: \
- /home/claude/pm_cosmo/tests/test_main.cpp /usr/include/stdc-predef.h \
- /home/claude/pm_cosmo/tests/test_framework.hpp \
+ /home/diego-villalba/code/Cosmo_Open_MP/tests/test_main.cpp \
+ /usr/include/stdc-predef.h \
+ /home/diego-villalba/code/Cosmo_Open_MP/tests/test_framework.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

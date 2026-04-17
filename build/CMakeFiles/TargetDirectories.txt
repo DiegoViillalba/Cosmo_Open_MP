@@ -1,5 +1,5 @@
-/home/claude/pm_cosmo/build/CMakeFiles/pm_serial.dir
-/home/claude/pm_cosmo/build/CMakeFiles/pm_parallel.dir
-/home/claude/pm_cosmo/build/CMakeFiles/run_tests.dir
-/home/claude/pm_cosmo/build/CMakeFiles/edit_cache.dir
-/home/claude/pm_cosmo/build/CMakeFiles/rebuild_cache.dir
+/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles/pm_serial.dir
+/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles/pm_parallel.dir
+/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles/run_tests.dir
+/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles/edit_cache.dir
+/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles/rebuild_cache.dir

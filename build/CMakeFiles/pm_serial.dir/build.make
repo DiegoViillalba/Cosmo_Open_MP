@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/claude/pm_cosmo
+CMAKE_SOURCE_DIR = /home/diego-villalba/code/Cosmo_Open_MP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/claude/pm_cosmo/build
+CMAKE_BINARY_DIR = /home/diego-villalba/code/Cosmo_Open_MP/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pm_serial.dir/depend.make
@@ -70,144 +70,144 @@ include CMakeFiles/pm_serial.dir/progress.make
 include CMakeFiles/pm_serial.dir/flags.make
 
 CMakeFiles/pm_serial.dir/src/main.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/main.cpp.o: /home/claude/pm_cosmo/src/main.cpp
+CMakeFiles/pm_serial.dir/src/main.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/main.cpp
 CMakeFiles/pm_serial.dir/src/main.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pm_serial.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/main.cpp.o -MF CMakeFiles/pm_serial.dir/src/main.cpp.o.d -o CMakeFiles/pm_serial.dir/src/main.cpp.o -c /home/claude/pm_cosmo/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pm_serial.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/main.cpp.o -MF CMakeFiles/pm_serial.dir/src/main.cpp.o.d -o CMakeFiles/pm_serial.dir/src/main.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/main.cpp
 
 CMakeFiles/pm_serial.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/main.cpp > CMakeFiles/pm_serial.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/main.cpp > CMakeFiles/pm_serial.dir/src/main.cpp.i
 
 CMakeFiles/pm_serial.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/main.cpp -o CMakeFiles/pm_serial.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/main.cpp -o CMakeFiles/pm_serial.dir/src/main.cpp.s
 
 CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o: /home/claude/pm_cosmo/src/ic_reader.cpp
+CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/ic_reader.cpp
 CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o -MF CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o.d -o CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o -c /home/claude/pm_cosmo/src/ic_reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o -MF CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o.d -o CMakeFiles/pm_serial.dir/src/ic_reader.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/ic_reader.cpp
 
 CMakeFiles/pm_serial.dir/src/ic_reader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/ic_reader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/ic_reader.cpp > CMakeFiles/pm_serial.dir/src/ic_reader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/ic_reader.cpp > CMakeFiles/pm_serial.dir/src/ic_reader.cpp.i
 
 CMakeFiles/pm_serial.dir/src/ic_reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/ic_reader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/ic_reader.cpp -o CMakeFiles/pm_serial.dir/src/ic_reader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/ic_reader.cpp -o CMakeFiles/pm_serial.dir/src/ic_reader.cpp.s
 
 CMakeFiles/pm_serial.dir/src/cic.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/cic.cpp.o: /home/claude/pm_cosmo/src/cic.cpp
+CMakeFiles/pm_serial.dir/src/cic.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/cic.cpp
 CMakeFiles/pm_serial.dir/src/cic.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pm_serial.dir/src/cic.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/cic.cpp.o -MF CMakeFiles/pm_serial.dir/src/cic.cpp.o.d -o CMakeFiles/pm_serial.dir/src/cic.cpp.o -c /home/claude/pm_cosmo/src/cic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pm_serial.dir/src/cic.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/cic.cpp.o -MF CMakeFiles/pm_serial.dir/src/cic.cpp.o.d -o CMakeFiles/pm_serial.dir/src/cic.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/cic.cpp
 
 CMakeFiles/pm_serial.dir/src/cic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/cic.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/cic.cpp > CMakeFiles/pm_serial.dir/src/cic.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/cic.cpp > CMakeFiles/pm_serial.dir/src/cic.cpp.i
 
 CMakeFiles/pm_serial.dir/src/cic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/cic.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/cic.cpp -o CMakeFiles/pm_serial.dir/src/cic.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/cic.cpp -o CMakeFiles/pm_serial.dir/src/cic.cpp.s
 
 CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o: /home/claude/pm_cosmo/src/poisson_fft.cpp
+CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/poisson_fft.cpp
 CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o -MF CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o.d -o CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o -c /home/claude/pm_cosmo/src/poisson_fft.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o -MF CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o.d -o CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/poisson_fft.cpp
 
 CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/poisson_fft.cpp > CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/poisson_fft.cpp > CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.i
 
 CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/poisson_fft.cpp -o CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/poisson_fft.cpp -o CMakeFiles/pm_serial.dir/src/poisson_fft.cpp.s
 
 CMakeFiles/pm_serial.dir/src/gradient.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/gradient.cpp.o: /home/claude/pm_cosmo/src/gradient.cpp
+CMakeFiles/pm_serial.dir/src/gradient.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/gradient.cpp
 CMakeFiles/pm_serial.dir/src/gradient.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pm_serial.dir/src/gradient.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/gradient.cpp.o -MF CMakeFiles/pm_serial.dir/src/gradient.cpp.o.d -o CMakeFiles/pm_serial.dir/src/gradient.cpp.o -c /home/claude/pm_cosmo/src/gradient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pm_serial.dir/src/gradient.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/gradient.cpp.o -MF CMakeFiles/pm_serial.dir/src/gradient.cpp.o.d -o CMakeFiles/pm_serial.dir/src/gradient.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/gradient.cpp
 
 CMakeFiles/pm_serial.dir/src/gradient.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/gradient.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/gradient.cpp > CMakeFiles/pm_serial.dir/src/gradient.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/gradient.cpp > CMakeFiles/pm_serial.dir/src/gradient.cpp.i
 
 CMakeFiles/pm_serial.dir/src/gradient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/gradient.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/gradient.cpp -o CMakeFiles/pm_serial.dir/src/gradient.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/gradient.cpp -o CMakeFiles/pm_serial.dir/src/gradient.cpp.s
 
 CMakeFiles/pm_serial.dir/src/force_interp.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/force_interp.cpp.o: /home/claude/pm_cosmo/src/force_interp.cpp
+CMakeFiles/pm_serial.dir/src/force_interp.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/force_interp.cpp
 CMakeFiles/pm_serial.dir/src/force_interp.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pm_serial.dir/src/force_interp.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/force_interp.cpp.o -MF CMakeFiles/pm_serial.dir/src/force_interp.cpp.o.d -o CMakeFiles/pm_serial.dir/src/force_interp.cpp.o -c /home/claude/pm_cosmo/src/force_interp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pm_serial.dir/src/force_interp.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/force_interp.cpp.o -MF CMakeFiles/pm_serial.dir/src/force_interp.cpp.o.d -o CMakeFiles/pm_serial.dir/src/force_interp.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/force_interp.cpp
 
 CMakeFiles/pm_serial.dir/src/force_interp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/force_interp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/force_interp.cpp > CMakeFiles/pm_serial.dir/src/force_interp.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/force_interp.cpp > CMakeFiles/pm_serial.dir/src/force_interp.cpp.i
 
 CMakeFiles/pm_serial.dir/src/force_interp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/force_interp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/force_interp.cpp -o CMakeFiles/pm_serial.dir/src/force_interp.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/force_interp.cpp -o CMakeFiles/pm_serial.dir/src/force_interp.cpp.s
 
 CMakeFiles/pm_serial.dir/src/integrator.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/integrator.cpp.o: /home/claude/pm_cosmo/src/integrator.cpp
+CMakeFiles/pm_serial.dir/src/integrator.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/integrator.cpp
 CMakeFiles/pm_serial.dir/src/integrator.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pm_serial.dir/src/integrator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/integrator.cpp.o -MF CMakeFiles/pm_serial.dir/src/integrator.cpp.o.d -o CMakeFiles/pm_serial.dir/src/integrator.cpp.o -c /home/claude/pm_cosmo/src/integrator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pm_serial.dir/src/integrator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/integrator.cpp.o -MF CMakeFiles/pm_serial.dir/src/integrator.cpp.o.d -o CMakeFiles/pm_serial.dir/src/integrator.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/integrator.cpp
 
 CMakeFiles/pm_serial.dir/src/integrator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/integrator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/integrator.cpp > CMakeFiles/pm_serial.dir/src/integrator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/integrator.cpp > CMakeFiles/pm_serial.dir/src/integrator.cpp.i
 
 CMakeFiles/pm_serial.dir/src/integrator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/integrator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/integrator.cpp -o CMakeFiles/pm_serial.dir/src/integrator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/integrator.cpp -o CMakeFiles/pm_serial.dir/src/integrator.cpp.s
 
 CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o: /home/claude/pm_cosmo/src/diagnostics.cpp
+CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/diagnostics.cpp
 CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o -MF CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o.d -o CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o -c /home/claude/pm_cosmo/src/diagnostics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o -MF CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o.d -o CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/diagnostics.cpp
 
 CMakeFiles/pm_serial.dir/src/diagnostics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/diagnostics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/diagnostics.cpp > CMakeFiles/pm_serial.dir/src/diagnostics.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/diagnostics.cpp > CMakeFiles/pm_serial.dir/src/diagnostics.cpp.i
 
 CMakeFiles/pm_serial.dir/src/diagnostics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/diagnostics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/diagnostics.cpp -o CMakeFiles/pm_serial.dir/src/diagnostics.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/diagnostics.cpp -o CMakeFiles/pm_serial.dir/src/diagnostics.cpp.s
 
 CMakeFiles/pm_serial.dir/src/output.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/output.cpp.o: /home/claude/pm_cosmo/src/output.cpp
+CMakeFiles/pm_serial.dir/src/output.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/output.cpp
 CMakeFiles/pm_serial.dir/src/output.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pm_serial.dir/src/output.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/output.cpp.o -MF CMakeFiles/pm_serial.dir/src/output.cpp.o.d -o CMakeFiles/pm_serial.dir/src/output.cpp.o -c /home/claude/pm_cosmo/src/output.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pm_serial.dir/src/output.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/output.cpp.o -MF CMakeFiles/pm_serial.dir/src/output.cpp.o.d -o CMakeFiles/pm_serial.dir/src/output.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/output.cpp
 
 CMakeFiles/pm_serial.dir/src/output.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/output.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/output.cpp > CMakeFiles/pm_serial.dir/src/output.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/output.cpp > CMakeFiles/pm_serial.dir/src/output.cpp.i
 
 CMakeFiles/pm_serial.dir/src/output.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/output.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/output.cpp -o CMakeFiles/pm_serial.dir/src/output.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/output.cpp -o CMakeFiles/pm_serial.dir/src/output.cpp.s
 
 CMakeFiles/pm_serial.dir/src/simulation.cpp.o: CMakeFiles/pm_serial.dir/flags.make
-CMakeFiles/pm_serial.dir/src/simulation.cpp.o: /home/claude/pm_cosmo/src/simulation.cpp
+CMakeFiles/pm_serial.dir/src/simulation.cpp.o: /home/diego-villalba/code/Cosmo_Open_MP/src/simulation.cpp
 CMakeFiles/pm_serial.dir/src/simulation.cpp.o: CMakeFiles/pm_serial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pm_serial.dir/src/simulation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/simulation.cpp.o -MF CMakeFiles/pm_serial.dir/src/simulation.cpp.o.d -o CMakeFiles/pm_serial.dir/src/simulation.cpp.o -c /home/claude/pm_cosmo/src/simulation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pm_serial.dir/src/simulation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pm_serial.dir/src/simulation.cpp.o -MF CMakeFiles/pm_serial.dir/src/simulation.cpp.o.d -o CMakeFiles/pm_serial.dir/src/simulation.cpp.o -c /home/diego-villalba/code/Cosmo_Open_MP/src/simulation.cpp
 
 CMakeFiles/pm_serial.dir/src/simulation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pm_serial.dir/src/simulation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/claude/pm_cosmo/src/simulation.cpp > CMakeFiles/pm_serial.dir/src/simulation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diego-villalba/code/Cosmo_Open_MP/src/simulation.cpp > CMakeFiles/pm_serial.dir/src/simulation.cpp.i
 
 CMakeFiles/pm_serial.dir/src/simulation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pm_serial.dir/src/simulation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/claude/pm_cosmo/src/simulation.cpp -o CMakeFiles/pm_serial.dir/src/simulation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diego-villalba/code/Cosmo_Open_MP/src/simulation.cpp -o CMakeFiles/pm_serial.dir/src/simulation.cpp.s
 
 # Object files for target pm_serial
 pm_serial_OBJECTS = \
@@ -236,8 +236,9 @@ pm_serial: CMakeFiles/pm_serial.dir/src/diagnostics.cpp.o
 pm_serial: CMakeFiles/pm_serial.dir/src/output.cpp.o
 pm_serial: CMakeFiles/pm_serial.dir/src/simulation.cpp.o
 pm_serial: CMakeFiles/pm_serial.dir/build.make
+pm_serial: /usr/lib/x86_64-linux-gnu/libfftw3_omp.so
 pm_serial: CMakeFiles/pm_serial.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/claude/pm_cosmo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable pm_serial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable pm_serial"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pm_serial.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -249,6 +250,6 @@ CMakeFiles/pm_serial.dir/clean:
 .PHONY : CMakeFiles/pm_serial.dir/clean
 
 CMakeFiles/pm_serial.dir/depend:
-	cd /home/claude/pm_cosmo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/claude/pm_cosmo /home/claude/pm_cosmo /home/claude/pm_cosmo/build /home/claude/pm_cosmo/build /home/claude/pm_cosmo/build/CMakeFiles/pm_serial.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/diego-villalba/code/Cosmo_Open_MP/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diego-villalba/code/Cosmo_Open_MP /home/diego-villalba/code/Cosmo_Open_MP /home/diego-villalba/code/Cosmo_Open_MP/build /home/diego-villalba/code/Cosmo_Open_MP/build /home/diego-villalba/code/Cosmo_Open_MP/build/CMakeFiles/pm_serial.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/pm_serial.dir/depend
 
