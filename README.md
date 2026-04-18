@@ -1,4 +1,4 @@
-# pm\_cosmo — Simulador Particle-Mesh Cosmológico con OpenMP
+# Ilhuca cosmo — Simulador Particle-Mesh Cosmológico con OpenMP
 
 **TSCAD 2026-2 · Física Biomédica · UNAM · Equipo 4**
 
